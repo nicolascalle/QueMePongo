@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+ 
+ 	<context:property-placeholder location="classpath:config.properties" />
+ 	
+ 	<bean id="appConfig" class="configuracion.AppConfig">
+    	<property name="cantidadMaximaDePrendasUsuarioGratuito" value="${usuarioGratuito.cantidadMaximaDePrendas}" />
+    	<property name="cityList_openWeather_fileLocation" value="${api.clima.openWeather.cityList}" />
+    	<property name="mailSender_gmailAccount" value="${mailSender.account}" />
+    	<property name="mailSender_gmailPassword" value="${mailSender.password}" />
+    	<property name="mailSender_smtpServerHost" value="${mailSender.smtp.host}" />
+    	<property name="mailSender_smtpServerPort" value="${mailSender.smtp.port}" />
+    	<property name="mailSender_smtpSslTrust" value="${mailSender.smtp.ssl.trust}" />
+    	<property name="mailSender_smtpAuth" value="${mailSender.smtp.auth}" />
+    	<property name="mailSender_smtpStartTlsEnable" value="${mailSender.smtp.starttls.enable}" />
+    	<property name="whatsAppSender_accountSid" value="${whatsappSender.accountSid}" />
+    	<property name="whatsAppSender_authToken" value="${whatsappSender.authToken}" />
+    	<property name="whatsAppSender_number" value="${whatsappSender.phoneNumber}" />
+  	</bean>
+ 
+</beans>
